@@ -6,30 +6,30 @@ import chess.pieces.King;
 import chess.pieces.Rook;
 
 public class ChessMatch {
-	Board chessBoard;
+	Board board;
 	
 	public ChessMatch() {
-		chessBoard = new Board(8, 8);
+		board = new Board(8, 8);
 		initialSetup();
 	}
 	
 	public ChessPiece[][] getPieces(){
-		ChessPiece[][] mat = new ChessPiece[chessBoard.getRows()][chessBoard.getColumns()];
-		for(int i=0 ; i<chessBoard.getRows() ; i++) {
-			for(int j = 0 ; j<chessBoard.getColumns() ; j++) {
-				mat[i][j] = (ChessPiece) chessBoard.piece(i, j);
+		ChessPiece[][] mat = new ChessPiece[board.getRows()][board.getColumns()];
+		for(int i=0 ; i<board.getRows() ; i++) {
+			for(int j = 0 ; j<board.getColumns() ; j++) {
+				mat[i][j] = (ChessPiece) board.piece(i, j);
 			}
 		}
 		return mat;
 	}
 	
 	private void initialSetup() {		
-		chessBoard.placePiece(new King(chessBoard, Color.BLACK), new Position(0, 4));
-		chessBoard.placePiece(new Rook(chessBoard, Color.BLACK), new Position(0, 0));
-		chessBoard.placePiece(new Rook(chessBoard, Color.BLACK), new Position(0, 7));
+		board.placePiece(new King(board, Color.BLACK), new Position(0, 4));
+		board.placePiece(new Rook(board, Color.BLACK), new Position(0, 0));
+		board.placePiece(new Rook(board, Color.BLACK), new Position(0, 7));
 		
-		chessBoard.placePiece(new King(chessBoard, Color.WHITE), new Position(7, 4));
-		chessBoard.placePiece(new Rook(chessBoard, Color.WHITE), new Position(7, 0));
-		chessBoard.placePiece(new Rook(chessBoard, Color.WHITE), new Position(7, 7));
+		board.placePiece(new King(board, Color.WHITE), new Position(7, 4));
+		board.placePiece(new Rook(board, Color.WHITE), new Position(7, 0));
+		board.placePiece(new Rook(board, Color.WHITE), new Position(7, 7));
 	}
 }
