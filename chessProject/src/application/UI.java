@@ -49,6 +49,9 @@ public class UI {
 		System.out.println();
 		System.out.println("Turns: " + chessMatch.getTurns());
 		System.out.println("Waiting player: " + chessMatch.getCurrentPlayer());
+		if(chessMatch.getCheck()) {
+			System.out.println("CHECK!");
+		}
 	}
 
 	public static void printBoard(ChessPiece[][] pieces) {
@@ -78,7 +81,7 @@ public class UI {
 			System.out.print(ANSI_YELLOW_BACKGROUND);
 		}
 		if (piece == null) {
-			System.out.print("▫" + ANSI_RESET);
+			System.out.print("-" + ANSI_RESET);
 		} else {
 			System.out.print(piece + ANSI_RESET);
 		}
