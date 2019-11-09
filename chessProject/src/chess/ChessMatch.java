@@ -8,19 +8,19 @@ import chess.pieces.Rook;
 
 public class ChessMatch {
 	
-	private int turn;
+	private int turns;
 	private Color currentPlayer;
 	private Board board;
 	
 	public ChessMatch() {
 		board = new Board(8, 8);
-		turn = 0;
+		turns = 0;
 		currentPlayer = Color.WHITE;
 		initialSetup();
 	}
 	
-	public int getTurn() {
-		return turn;
+	public int getTurns() {
+		return turns;
 	}
 	
 	public Color getCurrentPlayer() {
@@ -72,7 +72,7 @@ public class ChessMatch {
 	}
 	
 	private void nextTurn() {
-		turn++;
+		turns++;
 		currentPlayer = (currentPlayer == Color.WHITE) ? Color.BLACK : Color.WHITE;
 	}
 	
